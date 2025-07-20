@@ -2,7 +2,59 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Optional: Add a background image -->
+<style>
+    body {
+        background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+        min-height: 100vh;
+    }
+
+    .welcome-container {
+        padding: 60px 20px;
+    }
+
+    .diary-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .btn-custom {
+        margin: 10px;
+    }
+
+    .quote {
+        font-style: italic;
+        color: #555;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container welcome-container text-center">
+    <div class="diary-card">
+        <h1 class="display-4">Welcome to Your Diary</h1>
+        <p class="lead">Start capturing your thoughts and memories today.</p>
+
+        <div class="quote">
+            "Writing is the painting of the voice." — Voltaire
+        </div>
+
+        <div class="mt-4">
+
+                <a class="btn btn-primary" asp-controller="DiaryEntry" asp-action="Create">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5" />
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+                    </svg>
+                    create new Diary entry
+                </a>
+
+           @*  <a href="@Url.Action("Create", "Diary")" class="btn btn-primary btn-custom">Write a New Entry</a>
+            <a href="@Url.Action("Index", "Diary")" class="btn btn-outline-secondary btn-custom">View All Entries</a> *@
+        </div>
+    </div>
 </div>
